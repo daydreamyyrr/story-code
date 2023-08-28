@@ -1,9 +1,10 @@
 #include"enemy.h"
 class enemy(){
   public:
+  //
   enemy(char name,int hp,int atk,int def,int money,int exp,int item):enemy_Name(name),Hp(hp),Atk(atk),Def(def),Money_drop(money),Exp_drop(exp){}
-  string getname(){}
-  void setname(string m_name){}
+  string getname(){}//获得名字
+  void setname(string m_name){}//修改名字
   int getHp(){}
   void setHp(int m_hp){}
   int getAtk(){}
@@ -17,13 +18,13 @@ class enemy(){
   int getitem(){}
   void setitem(int m_item){}
   private:
-  string enemy_Name;
-  int Hp;
-  int Atk;
-  int Def;
-  int Money_drop;
-  int Exp_drop;
-  int Items_drop;
+  string enemy_Name;//敌人名字
+  int Hp;//血量
+  int Atk;//攻击力
+  int Def;//防御力
+  int Money_drop;//击败掉落金钱
+  int Exp_drop;//掉落经验
+  int Items_drop;//掉落物品
 }
 string enemy::getname(){
   return enemy_Name;
