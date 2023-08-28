@@ -37,3 +37,7 @@ int enmey::getHp(){
 void enemy::setHp(m_hp){
   Hp=m_hp;
 }
+int enemy::getAtk(){
+  return Atk;
+}
+void 
