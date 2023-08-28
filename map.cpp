@@ -163,9 +163,14 @@ void Map::Move(char order)
 	switch (order)
 	{
 		case 'w': {
-			if (position == 0 || position == 1 || position == 3 || position == 6 || position == 7 || position == 8) {
+			if (position == 0 || position == 3 || position == 7 ) {
 				dx--;
 				position++;
+			}
+			else if (position == 1)
+			{
+				dx--;
+				position = 7;
 			}
 			else
 			{
@@ -174,14 +179,14 @@ void Map::Move(char order)
 			break;
 		}
 		case 'a': {
-			if (position == 2 || position == 4 ) {
+			if (position == 1 || position == 2 || position == 6) {
 				dy--;
 				position++;
 			}
-			else if (position == 6)
+			else if (position == 5)
 			{
 				dy--;
-				position = 2;
+				position = 1;
 			}
 			else
 			{
@@ -190,9 +195,14 @@ void Map::Move(char order)
 			break;
 		}
 		case 's': {
-			if (position == 1 || position == 2 || position == 4 || position == 7 || position == 8 || position == 9) {
+			if (position == 1 || position == 4 || position == 8 ) {
 				dx++;
 				position--;
+			}
+			else if (position == 7)
+			{
+				dx++;
+				position = 1;
 			}
 			else
 			{
@@ -201,14 +211,14 @@ void Map::Move(char order)
 			break;
 		}
 		case 'd': {
-			if (position == 3 || position == 5 ){
+			if (position == 2 || position == 3 || position == 5 ){
 				dy++;
 				position--;
 			}
-			else if (position == 2)
+			else if (position == 1)
 			{
 				dy++;
-				position = 6;
+				position = 5;
 			}
 			else
 			{
