@@ -3,6 +3,7 @@ using namespace std;
 class enemy(){
   public:
   //
+  enemy(int flag):id(flag){}
   enemy(char name,int hp,int atk,int def,int money,int exp,int item):enemy_Name(name),Hp(hp),Atk(atk),Def(def),Money_drop(money),Exp_drop(exp){}
   string getname(){}//获得名字
   void setname(string m_name){}//修改名字
