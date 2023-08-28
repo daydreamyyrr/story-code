@@ -1,5 +1,7 @@
 #include"enemy.h"
-
+enemy::enemy(int flag){
+  
+}
 string enemy::getname(){
   return enemy_Name;
 }
