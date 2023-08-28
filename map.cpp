@@ -236,14 +236,14 @@ void Map::Move(char order)
 
 bool Map::isThereChat()
 {
-	if (position == 0 || position == 2 || position == 4 || position == 5 || position == 7 || position == 9)
+	if (0<=position<=8)
 		return true;
 	else return false;
 }
 
 bool Map::isThereFight()
 {
-	if (position == 1 || position == 3 || position == 4 || position == 5 || position == 6 || position == 7 || position == 8 || position == 9)
+	if (0<position<=8)
 		return true;
 	else return false;
 }
