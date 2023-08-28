@@ -11,8 +11,8 @@ class enemy(){
   void setAtk(int m_atk){}
   int getDef(){}
   void setDef(int m_stk){}
-  int getmoneyNums(){}
-  void setmoneyNums(int m_money){}
+  int getmoneyNums(){}//获得掉落金钱数目
+  void setmoneyNums(int m_money){}//修改掉落金钱数目
   int getexpNums(){}
   void setexpNums(int m_exp){}
   int getitem(){}
