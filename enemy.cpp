@@ -1,10 +1,22 @@
 #include"enemy.h"
-enemy::enemy(int flag){
-  switch(flag){
-    case 1:enemy(水鬼，)
-
-
-  
+enemy::enemy(int flag) {
+	switch (flag)
+	{//hp100-1000 atk20-100 def20-100 money10-70 exp10-50 item0
+	case 1:
+		enemy("缢死鬼", 400, 24, 30, 15, 20, 0); break;
+	case 2:
+		enemy("水鬼", 250, 20, 40, 20, 20, 0); break;
+	case 3:
+		enemy("拘魂鬼", 300, 35, 40, 40, 30, 0); break;
+	case 4:
+		enemy("狰狞鬼", 300, 20, 45, 15, 15, 0); break;
+	case 5:
+		enemy("厉鬼", 500, 50, 40, 40, 40, 0); break;
+	case 6:
+		enemy("伥鬼", 450, 35, 35, 35, 25, 0); break;
+	case 7:
+		enemy("疟疾鬼", 700, 60, 70, 70, 45, 0); break;
+	}
 }
 string enemy::getname(){
   return enemy_Name;
