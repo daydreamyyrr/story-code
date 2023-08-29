@@ -33,7 +33,7 @@ public:
 private:
 	string name;
 	int position; //当前位置
-	string mapName[9] = { "清风镇","三凤山","云中池","陷土沼泽","地府","弘阳镇","奇龙镇","迷雾深林","云龙峰" };
+	string mapName[9] = { "清风镇","三凤山","云中池","陷土沼泽","阴邪","弘阳镇","奇龙镇","迷雾深林","云龙峰" };
 	int mapNum;
 	char pos[4][5];
 	int dx;
