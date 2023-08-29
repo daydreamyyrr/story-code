@@ -20,7 +20,7 @@ Map::Map():npc(0){
 Map::Map(int p) :npc(p) {
 	position = p;
 	/*
-	switch (p)			//我跳不进
+	switch (p)			
 	{
 	case'0': {
 		dx = 3;
