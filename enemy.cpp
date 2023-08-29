@@ -1,5 +1,9 @@
 #include"enemy.h"
 enemy::enemy(int flag){
+  switch(flag){
+    case 1:enemy()
+
+
   
 }
 string enemy::getname(){
