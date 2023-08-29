@@ -7,7 +7,7 @@ Map::Map():npc(0){
 	dx = 3;
 	dy = 2;
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		for (int j = 0; j < 5; j++)
 		{
