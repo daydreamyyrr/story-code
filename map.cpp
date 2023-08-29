@@ -131,30 +131,30 @@ void Map::ShowMap()
 {
 	system("cls");
 	cout << "世界地图:" << endl;
-	cout<<"                       ___________"<<endl;
-	cout<<"                       |          |"<<endl;
-	cout<<"                       |  云龙峰  |"<<endl;
-	cout<<"                       |    "<<pos[0][2]<<"     |"<<endl;
-	cout<<"___________            |__________|"<<endl;
-        cout<<"|          |           |         |"<<endl;
-	cout<<"|   地府   |           | 迷雾森林 |"<<endl;
-	cout<<"|    "<< pos[1][0] <<"     |          |    "<< pos[1][2] <<"     |"<<endl;
-	cout<<"|__________|__________|__________|__________|__________|"<<endl;
-	cout<<"|          |          |          |          |          |"<<endl;
-	cout<<"| 陷土沼泽  |  云中池  |  三凤山   |  弘阳镇   |  奇龙镇  |"<<endl;
-	cout<<"|          |     "<< pos[2][0] <<"    |    "<< pos[2][1] <<"     |    "<< pos[2][2] <<"     |"<< pos[2][3] <<"     |"<< pos[2][4] <<"     |"<<endl;
-	cout<<"|__________|__________|__________|__________|__________|"<<endl;
-	cout<<"                      |          |"<<endl;
-	cout<<"                      |  清风镇  |"<<endl;
-	cout<<"                      |    "<< pos[3][2] <<"     |"<<endl;
-	cout<<"                      |__________|"<<endl;
+	cout << "                      ____________" << endl;
+	cout << "                      |          |" << endl;
+	cout << "                      |  云龙峰  |" << endl;
+	cout << "                      |    " << pos[0][2] << "     |" << endl;
+	cout << "____________          |__________|" << endl;
+	cout << "|          |          |          |" << endl;
+	cout << "|   地府   |          | 迷雾森林 |" << endl;
+	cout << "|    " << pos[1][0] << "     |          |    " << pos[1][2] << "     |" << endl;
+	cout << "|__________|__________|__________|______________________" << endl;
+	cout << "|          |          |          |          |          |" << endl;
+	cout << "| 陷土沼泽 |  云中池  |  三凤山  |  弘阳镇  |  奇龙镇  |" << endl;
+	cout << "|    " << pos[2][0] << "     |    " << pos[2][1] << "     |    " << pos[2][2] << "     |     " << pos[2][3] << "    |     " << pos[2][4] << "    |" << endl;
+	cout << "|__________|__________|__________|__________|__________|" << endl;
+	cout << "                      |          |" << endl;
+	cout << "                      |  清风镇  |" << endl;
+	cout << "                      |    " << pos[3][2] << "     |" << endl;
+	cout << "                      |__________|" << endl;
 	cout << "您现在的位置为" << mapName[position] << endl;
 }
 
 
 void Map::showRoom() {
-	if (isThereChat()) 
-		cout << "这里有：" << '\t'<<npc.getName() << '\t';
+	if (isThereChat())
+		cout << "这里有：" << '\t' << npc.getName() << '\t';
 }
 
 void Map::Move(char order)
@@ -162,73 +162,84 @@ void Map::Move(char order)
 	pos[dx][dy] = ' ';
 	switch (order)
 	{
-		case 'w': {
-			if (position == 0 || position == 3 || position == 7 ) {
-				dx--;
-				position++;
-			}
-			else if (position == 1)
-			{
-				dx--;
-				position = 7;
-			}
-			else
-			{
-				cout << "移动失败" << endl;
-			}
-			break;
+	case 'w': {
+		if (position == 0 || position == 3 || position == 7) {
+			dx--;
+			position++;
 		}
-		case 'a': {
-			if (position == 1 || position == 2 || position == 6) {
-				dy--;
-				position++;
-			}
-			else if (position == 5)
-			{
-				dy--;
-				position = 1;
-			}
-			else
-			{
-				cout << "移动失败" << endl;
-			}
-			break;
+		else if (position == 1)
+		{
+			dx--;
+			position = 7;
 		}
-		case 's': {
-			if (position == 1 || position == 4 || position == 8 ) {
-				dx++;
-				position--;
-			}
-			else if (position == 7)
-			{
-				dx++;
-				position = 1;
-			}
-			else
-			{
-				cout << "移动失败" << endl;
-			}
-			break;
+		else
+		{
+			cout << "移动失败" << endl;
 		}
-		case 'd': {
-			if (position == 2 || position == 3 || position == 5 ){
-				dy++;
-				position--;
-			}
-			else if (position == 1)
-			{
-				dy++;
-				position = 5;
-			}
-			else
-			{
-				cout << "移动失败" << endl;
-			}
-			break;
-		}
-		default:
-			break;
+		break;
 	}
+	case 'a': {
+		if (position == 1 || position == 2 ) {
+			dy--;
+			position++;
+		}
+		else if (position == 5)
+		{
+			dy--;
+			position = 1;
+		}
+		else if (position == 6)
+		{
+			dy--;
+			position = 5;
+		}
+		else
+		{
+			cout << "移动失败" << endl;
+		}
+		break;
+	}
+	case 's': {
+		if (position == 1 || position == 4 || position == 8) {
+			dx++;
+			position--;
+		}
+		else if (position == 7)
+		{
+			dx++;
+			position = 1;
+		}
+		else
+		{
+			cout << "移动失败" << endl;
+		}
+		break;
+	}
+	case 'd': {
+		if (position == 2 || position == 3 ) {
+			dy++;
+			position--;
+		}
+		else if (position == 1)
+		{
+			dy++;
+			position = 5;
+		}
+		else if (position == 5)
+		{
+			dy++;
+			position = 6;
+		}
+		else
+		{
+			cout << "移动失败" << endl;
+		}
+		break;
+	}
+	default:
+		break;
+	}
+	
 	pos[dx][dy] = '*';
 	npc = Npc(position);		//更新npc
 	showRoom();
