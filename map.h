@@ -40,3 +40,5 @@ private:
 	int dy;
 	Npc npc;
 };
+
+#endif
