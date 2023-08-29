@@ -1,7 +1,7 @@
 #include"enemy.h"
 enemy::enemy(int flag){
   switch(flag){
-    case 1:enemy()
+    case 1:enemy(水鬼，)
 
 
   
