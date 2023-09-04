@@ -1,10 +1,11 @@
 #include<iostream>
+#include"Bag.h"
 using namespace std;
 
 class Role
 {
 public:
-	Role(int choice) :flag(choice)
+	Role(int choice) :id(choice)
 	{
 		if (choice == 1)
 		{
@@ -33,6 +34,6 @@ private:
 	int regeneration_amount;//(重生数量）
 	int strike_damage;//（撞击伤害，玩家角色的攻击给予敌人的伤害，受攻击力的影响）、
 	int damage_absorption;//（伤害吸收，受到防御属性的影响）
-	int flag;//职业编号
+	int id;//职业编号
 	Bag bag;
 };
