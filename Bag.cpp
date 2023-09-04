@@ -1,4 +1,5 @@
 #include"Bag.h"
+
 Good::Good(int i): id(i)
 {
 	switch (id)
@@ -94,7 +95,22 @@ Good::Good(int i): id(i)
 		break;
 	}
 }
+string Good::Getname() { return name; }
 Bag::Bag()
 {
 
+}
+bool Bag::purchase(int id)
+{
+	if (st[id] == false)
+	{
+		st[id] = true;
+		cout << "您已购买" << goods[id].Getname() << endl;
+		return true;
+	}
+	else
+	{
+		cout << "购买失败,您已购买过此商品" << endl;
+		return false;
+	}
 }
