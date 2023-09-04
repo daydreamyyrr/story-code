@@ -38,50 +38,51 @@ int Role_1Skill::getLevelMax(int whichSkill)
 		return skillLevel_Max_3;
 	if (whichSkill == 4)
 		return skillLevel_Max_4;
+	return 0;
 }
 string Role_1Skill::skillName(int whichSkill)
 {
 	if (whichSkill == 1)
-		return skill_1Name="三昧真火";
+		return skill_1Name = "三昧真火";
 	if (whichSkill == 2)
-		return skill_2Name="摘星换斗";
+		return skill_2Name = "摘星换斗";
 	if (whichSkill == 3)
-		return skill_3Name="清音绽放";
+		return skill_3Name = "清音绽放";
 	if (whichSkill == 4)
-		return skill_4Name="护身金刚";
+		return skill_4Name = "护身金刚";
 }
 string Role_1Skill::skillText(int whichSkill)
 {
 	if (whichSkill == 1)
-		return skill_1Text="“心者君火，亦称神火也，其名曰上昧；肾者臣火，亦称精火也，其名曰中昧；膀胱，即脐下气海者，民火也，其名曰下昧。”此为三昧真火。";
+		return skill_1Text = "“心者君火，亦称神火也，其名曰上昧；肾者臣火，亦称精火也，其名曰中昧；膀胱，即脐下气海者，民火也，其名曰下昧。”此为三昧真火。";
 	if (whichSkill == 2)
-		return skill_2Text="“只手擎天掌覆头，更从掌内注双眸。鼻端吸气频调息，用力收回左右手。”以摘星换斗之势发出势如鸿日的一击";
+		return skill_2Text = "“只手擎天掌覆头，更从掌内注双眸。鼻端吸气频调息，用力收回左右手。”以摘星换斗之势发出势如鸿日的一击";
 	if (whichSkill == 3)
-		return skill_3Text="“众生皆烦恼，烦恼皆苦。 烦恼皆不生不灭，不垢不净，不增不减。 有形者，生于无形，无能生有，有归于无。 境由心生。”以清音而清心，心若止水";
+		return skill_3Text = "“众生皆烦恼，烦恼皆苦。 烦恼皆不生不灭，不垢不净，不增不减。 有形者，生于无形，无能生有，有归于无。 境由心生。”以清音而清心，心若止水";
 	if (whichSkill == 4)
-		return skill_4Text="“天护身，地护身，十二元辰护我身，灵官老爷护满身，年护身，月护身，日护身，时护身，金甲层层护满身，谨请北斗七星，南斗六郎急护我身，吾奉太上老君急急如律令。”";
+		return skill_4Text = "“天护身，地护身，十二元辰护我身，灵官老爷护满身，年护身，月护身，日护身，时护身，金甲层层护满身，谨请北斗七星，南斗六郎急护我身，吾奉太上老君急急如律令。”";
 }
 int Role_1Skill::getNeedMp(int whichSkill)//法力消耗待定
 {
 	if (whichSkill == 1)
-		return skill_1NeedMp=0;
+		return skill_1NeedMp = 0;
 	if (whichSkill == 2)
-		return skill_2NeedMp=0;
+		return skill_2NeedMp = 0;
 	if (whichSkill == 3)
-		return skill_3NeedMp=0;
+		return skill_3NeedMp = 0;
 	if (whichSkill == 4)
-		return skill_4NeedMp=0;
+		return skill_4NeedMp = 0;
 }
 double Role_1Skill::getAddAtk(int whichSkill)//攻击力加成暂定
 {
 	if (whichSkill == 1)
-		return skill_1AddAtk=0;
+		return skill_1AddAtk = 0;
 	if (whichSkill == 2)
-		return skill_2AddAtk=0;
+		return skill_2AddAtk = 0;
 	if (whichSkill == 3)
-		return skill_3AddAtk=0;
+		return skill_3AddAtk = 0;
 	if (whichSkill == 4)
-		return skill_4AddAtk=0;
+		return skill_4AddAtk = 0;
 }
 int Role_1Skill::getRecHp(int whichSkill)//回血量暂定
 {
@@ -104,6 +105,7 @@ int Role_1Skill::getBuff(int whichSkill)//防御力加成暂定
 		return skill_1Buff = 0;
 	if (whichSkill == 4)
 		return skill_1Buff = 0;
+	return 0;
 }
 bool Role_1Skill::addLevel(int whichSkill)
 {
@@ -138,6 +140,7 @@ int Role_2Skill::getLevel(int whichSkill)
 		return skillLevel_3;
 	if (whichSkill == 4)
 		return skillLevel_4;
+	return 0;
 }
 int Role_2Skill::getLevelMax(int whichSkill)
 {
@@ -149,6 +152,7 @@ int Role_2Skill::getLevelMax(int whichSkill)
 		return skillLevel_Max_3;
 	if (whichSkill == 4)
 		return skillLevel_Max_4;
+	return 0;
 }
 string Role_2Skill::skillName(int whichSkill)
 {
@@ -160,6 +164,7 @@ string Role_2Skill::skillName(int whichSkill)
 		return skill_3Name = "白仙•犭戾";
 	if (whichSkill == 4)
 		return skill_4Name = "黄仙•狌猩";
+	return 0;
 }
 string Role_2Skill::skillText(int whichSkill)
 {
@@ -171,6 +176,7 @@ string Role_2Skill::skillText(int whichSkill)
 		return skill_3Text = "“又东南二十里，曰乐马之山。有兽焉，其状如彙（hui，四声，刺猬），赤如丹火，其名曰 ，见则其国大疫”";
 	if (whichSkill == 4)
 		return skill_4Text = "“狌猩之状，形乍如兽。厥性识往，为物警辨。以酒招灾，自贻缨罥。”";
+	return 0;
 }
 int Role_2Skill::getNeedMp(int whichSkill)//法力消耗待定
 {
@@ -182,6 +188,7 @@ int Role_2Skill::getNeedMp(int whichSkill)//法力消耗待定
 		return skill_3NeedMp = 0;
 	if (whichSkill == 4)
 		return skill_4NeedMp = 0;
+	return 0;
 }
 double Role_2Skill::getAddAtk(int whichSkill)//攻击力加成暂定
 {
@@ -193,6 +200,7 @@ double Role_2Skill::getAddAtk(int whichSkill)//攻击力加成暂定
 		return skill_3AddAtk = 0;
 	if (whichSkill == 4)
 		return skill_4AddAtk = 0;
+	return 0;
 }
 int Role_2Skill::getRecHp(int whichSkill)//回血量暂定
 {
@@ -204,6 +212,7 @@ int Role_2Skill::getRecHp(int whichSkill)//回血量暂定
 		return  skill_1recoverHp = 0;
 	if (whichSkill == 4)
 		return  skill_1recoverHp = 0;
+	return 0;
 }
 int Role_2Skill::getBuff(int whichSkill)//防御力加成暂定
 {
@@ -215,6 +224,7 @@ int Role_2Skill::getBuff(int whichSkill)//防御力加成暂定
 		return skill_1Buff = 0;
 	if (whichSkill == 4)
 		return skill_1Buff = 0;
+	return 0;
 }
 bool Role_2Skill::addLevel(int whichSkill)
 {
@@ -250,6 +260,7 @@ int Role_3Skill::getLevel(int whichSkill)
 		return skillLevel_3;
 	if (whichSkill == 4)
 		return skillLevel_4;
+	return 0;
 }
 int Role_3Skill::getLevelMax(int whichSkill)
 {
@@ -261,6 +272,7 @@ int Role_3Skill::getLevelMax(int whichSkill)
 		return skillLevel_Max_3;
 	if (whichSkill == 4)
 		return skillLevel_Max_4;
+	return 0;
 }
 string Role_3Skill::skillName(int whichSkill)
 {
@@ -272,6 +284,7 @@ string Role_3Skill::skillName(int whichSkill)
 		return skill_3Name = "旱魃，春风十里";
 	if (whichSkill == 4)
 		return skill_4Name = "伏尸，岩身加护";
+	return 0;
 }
 string Role_3Skill::skillText(int whichSkill)
 {
@@ -283,6 +296,7 @@ string Role_3Skill::skillText(int whichSkill)
 		return skill_3Text = "“有人衣青衣，名曰黄帝女魃，旱魃不为患，又有灾后之新生。”";
 	if (whichSkill == 4)
 		return skill_4Text = "“千年不朽，时伏地不徙，为衾尸以御之。”";
+	return 0;
 }
 int Role_3Skill::getNeedMp(int whichSkill)//法力消耗待定
 {
@@ -294,6 +308,7 @@ int Role_3Skill::getNeedMp(int whichSkill)//法力消耗待定
 		return skill_3NeedMp = 0;
 	if (whichSkill == 4)
 		return skill_4NeedMp = 0;
+	return 0;
 }
 double Role_3Skill::getAddAtk(int whichSkill)//攻击力加成暂定
 {
@@ -305,6 +320,7 @@ double Role_3Skill::getAddAtk(int whichSkill)//攻击力加成暂定
 		return skill_3AddAtk = 0;
 	if (whichSkill == 4)
 		return skill_4AddAtk = 0;
+	return 0;
 }
 int Role_3Skill::getRecHp(int whichSkill)//回血量暂定
 {
@@ -316,6 +332,7 @@ int Role_3Skill::getRecHp(int whichSkill)//回血量暂定
 		return  skill_1recoverHp = 0;
 	if (whichSkill == 4)
 		return  skill_1recoverHp = 0;
+	return 0;
 }
 int Role_3Skill::getBuff(int whichSkill)//防御力加成暂定
 {
@@ -327,6 +344,7 @@ int Role_3Skill::getBuff(int whichSkill)//防御力加成暂定
 		return skill_1Buff = 0;
 	if (whichSkill == 4)
 		return skill_1Buff = 0;
+	return 0;
 }
 bool Role_3Skill::addLevel(int whichSkill)
 {
