@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-Map::Map():npc(0){
+Map::Map() :npc(0) {
 	position = 0;
 	dx = 3;
 	dy = 2;
@@ -20,7 +20,7 @@ Map::Map():npc(0){
 Map::Map(int p) :npc(p) {
 	position = p;
 	/*
-	switch (p)			
+	switch (p)
 	{
 	case'0': {
 		dx = 3;
@@ -107,7 +107,7 @@ Map::Map(int p) :npc(p) {
 		dx = 0;
 		dy = 2;
 	}
-	
+
 	for (int i = 0; i < 5; i++)
 	{
 		for (int j = 0; j < 5; j++)
@@ -179,7 +179,7 @@ void Map::Move(char order)
 		break;
 	}
 	case 'a': {
-		if (position == 1 || position == 2 ) {
+		if (position == 1 || position == 2) {
 			dy--;
 			position++;
 		}
@@ -216,7 +216,7 @@ void Map::Move(char order)
 		break;
 	}
 	case 'd': {
-		if (position == 2 || position == 3 ) {
+		if (position == 2 || position == 3) {
 			dy++;
 			position--;
 		}
@@ -239,22 +239,22 @@ void Map::Move(char order)
 	default:
 		break;
 	}
-	
+
 	pos[dx][dy] = '*';
-	npc = Npc(position);		//更新npc
+	npc( Npc(position));		//更新npc
 	showRoom();
 }
 
 bool Map::isThereChat()
 {
-	if (0<=position<=8)
+	if (position <= 8 && position > 0)
 		return true;
 	else return false;
 }
 
 bool Map::isThereFight()
 {
-	if (0<position<=8)
+	if (position <= 8&&position>0)
 		return true;
 	else return false;
 }
@@ -264,23 +264,24 @@ int Map::getPosition()
 	return position;
 }
 
-string Map::getNpcName(){
+string Map::getNpcName() {
 	return npc.getName();
 }
 
-void Map::setNpc(Npc newNpc) {
+void Map::setNpc(Npc newNpc) 
+{
 	npc = newNpc;
 }
 
-Role Map::chatToNpc(Role player){
+Role Map::chatToNpc(Role player) {
 	return npc.chat(player);
 }
 
-int Map::getNpcGoodsId(){
+int Map::getNpcGoodsId() {
 	return npc.getGoodsId();
 }
 
-int Map::getNpcGoodsNum(){
+int Map::getNpcGoodsNum() {
 	return npc.getGoodsNum();
 }
 
