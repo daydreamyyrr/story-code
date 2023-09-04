@@ -3,7 +3,7 @@
 
 
 #include<iostream>
-#include<enemy.h>
+#include"enemy.h"
 
 using namespace std;
 
@@ -11,15 +11,15 @@ class Skill
 {
 public:
 	Skill();
-	~Skill(){};
-	virtual int getLevel(int whichSkill)=0;//得到技能等级
-	virtual bool addLevel(int whichSkill)=0;//技能升级
-	virtual int getLevelMax(int whichSkill)=0;//得到最高等级（设置为3级）
-	virtual string skillName(int whichSkill)=0;//得到技能名称
-	virtual string skillText(int whichSkill)=0;//技能描述
-	virtual int getNeedMp(int whichSkill)=0;//技能法力值消耗
-	virtual double getAddAtk(int whichSkill)=0;//技能攻击力加成
-	virtual int getRecHp(int whichSkill)=0;//技能回复生命
+	~Skill() {};
+	virtual int getLevel(int whichSkill) = 0;//得到技能等级
+	virtual bool addLevel(int whichSkill) = 0;//技能升级
+	virtual int getLevelMax(int whichSkill) = 0;//得到最高等级（设置为3级）
+	virtual string skillName(int whichSkill) = 0;//得到技能名称
+	virtual string skillText(int whichSkill) = 0;//技能描述
+	virtual int getNeedMp(int whichSkill) = 0;//技能法力值消耗
+	virtual double getAddAtk(int whichSkill) = 0;//技能攻击力加成
+	virtual int getRecHp(int whichSkill) = 0;//技能回复生命
 	virtual int getBuff(int whichSkill) = 0;//技能加成防御
 protected:
 	string skill_1Name;//攻击类
