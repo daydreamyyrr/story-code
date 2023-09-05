@@ -19,58 +19,7 @@ Map::Map() :npc(0) {
 
 Map::Map(int p) :npc(p) {
 	position = p;
-	/*
-	switch (p)
-	{
-	case'0': {//清风镇
-		dx = 3;
-		dy = 2;
-		break;
-	}
-	case'1': {//三凤山
-		dx = 2;
-		dy = 2;
-		break;
-	}
-	case'2':{//云中池
-		dx = 2;
-		dy = 1;
-		break;
-	}
-	case'3': {//陷土沼泽
-		dx = 2;
-		dy = 0;
-		break;
-	}
-	case'4': {//阴邪
-		dx = 1;
-		dy = 0;
-		break;
-	}
-	case'5': {//弘阳镇
-		dx = 2;
-		dy = 3;
-		break;
-	}
-	case'6': {//奇龙镇
-		dx = 2;
-		dy = 4;
-		break;
-	}
-	case'7': {//迷雾森林
-		dx = 1;
-		dy = 2;
-		break;
-	}
-	case'8': {//云龙峰
-		dx = 0;
-		dy = 2;
-		break;
-	}
-	default:
-		break;
-	}
-	*/
+	
 	if (p == 0) {
 		dx = 3;
 		dy = 2;
