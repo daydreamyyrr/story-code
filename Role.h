@@ -28,7 +28,7 @@ protected:
 	int mana_new;//当前法力值
 	int	atk; //（攻击力）
 	int defensive_power; //(防御力)
-	int experience_points;//（经验点数）
+	const int experience_points[24] = {60,63,66,70,75,81,88,98,110,125,143,166,195,232,277,334,405,494,605,743,917,1134,1405,1744};//升级经验点数
 	int experience_points_new;//（当前经验点数）
 	int level;// （等级）
 	int money;//（铜钱数）
