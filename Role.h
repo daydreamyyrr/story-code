@@ -37,6 +37,6 @@ protected:
 	int damage_absorption;//（伤害吸收，受到防御属性的影响）
 	int id;//职业编号
 	int equipment;
-	int StoryFlag;
+	int StoryFlag;//故事结点，结点到了才能触发故事。
 	Skill* p;
 };
