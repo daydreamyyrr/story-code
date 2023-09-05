@@ -22,15 +22,7 @@ public:
 	virtual int getRecHp(int whichSkill) = 0;//技能回复生命
 	virtual int getBuff(int whichSkill) = 0;//技能加成防御
 protected:
-	string skill_1Name;//攻击类
-	string skill_2Name;//攻击类
-	string skill_3Name;//恢复类
-	string skill_4Name;//加防类
-
-	string skill_1Text;
-	string skill_2Text;
-	string skill_3Text;
-	string skill_4Text;
+	
 
 	int skillLevel_1;			//在基类构造函数里初始化
 	int skillLevel_2;
@@ -51,8 +43,8 @@ public:
 	int getLevel(int whichSkill);//得到技能等级
 	bool addLevel(int whichSkill);//技能升级
 	int getLevelMax(int whichSkill);//得到最高等级（设置为7级）
-	string skillName(int whichSkill);//得到技能名称
-	string skillText(int whichSkill);//技能描述
+	void skillName(int whichSkill);//得到技能名称
+	void skillText(int whichSkill);//技能描述
 	int getNeedMp(int whichSkill);//技能法力值消耗
 	double getAddAtk(int whichSkill);//技能攻击力加成
 	int getRecHp(int whichSkill);//技能回复生命
@@ -65,8 +57,8 @@ public:
 	int getLevel(int whichSkill);//得到技能等级
 	bool addLevel(int whichSkill);//技能升级
 	int getLevelMax(int whichSkill);//得到最高等级（设置为7级）
-	string skillName(int whichSkill);//得到技能名称
-	string skillText(int whichSkill);//技能描述
+	void skillName(int whichSkill);//得到技能名称
+	void skillText(int whichSkill);//技能描述
 	int getNeedMp(int whichSkill);//技能法力值消耗
 	double getAddAtk(int whichSkill);//技能攻击力加成
 	int getRecHp(int whichSkill);//技能回复生命
@@ -79,8 +71,8 @@ public:
 	int getLevel(int whichSkill);//得到技能等级
 	bool addLevel(int whichSkill);//技能升级
 	int getLevelMax(int whichSkill);//得到最高等级（设置为7级）
-	string skillName(int whichSkill);//得到技能名称
-	string skillText(int whichSkill);//技能描述
+	void skillName(int whichSkill);//得到技能名称
+	void skillText(int whichSkill);//技能描述
 	int getNeedMp(int whichSkill);//技能法力值消耗
 	double getAddAtk(int whichSkill);//技能攻击力加成
 	int getRecHp(int whichSkill);//技能回复生命
