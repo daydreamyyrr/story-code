@@ -28,8 +28,6 @@ protected:
 	int mana_new;//当前法力值
 	int	atk; //（攻击力）
 	int defensive_power; //(防御力)
-	double agility; //（敏捷）、
-	double accuracy;//（准确度）
 	int experience_points;//（经验点数）
 	int experience_points_new;//（当前经验点数）
 	int level;// （等级）
@@ -39,5 +37,6 @@ protected:
 	int damage_absorption;//（伤害吸收，受到防御属性的影响）
 	int id;//职业编号
 	int equipment;
+	int StoryFlag;
 	Skill* p;
 };
