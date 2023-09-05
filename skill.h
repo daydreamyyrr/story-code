@@ -42,25 +42,7 @@ protected:
 	int skillLevel_Max_3;
 	int skillLevel_Max_4;
 
-	int skill_1NeedMp;
-	int skill_2NeedMp;
-	int skill_3NeedMp;
-	int skill_4NeedMp;
-
-	double skill_1AddAtk;
-	double skill_2AddAtk;
-	double skill_3AddAtk;
-	double skill_4AddAtk;
-
-	int skill_1recoverHp;
-	int skill_2recoverHp;
-	int skill_3recoverHp;
-	int skill_4recoverHp;
-
-	int skill_1Buff;
-	int skill_2Buff;
-	int skill_3Buff;
-	int skill_4Buff;
+	
 
 };
 class Role_1Skill :public Skill
