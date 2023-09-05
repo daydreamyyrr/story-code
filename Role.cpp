@@ -37,13 +37,9 @@ int Role::getBuff(int whichSkill) { return p->getBuff(whichSkill); }//技能加�
 int Role::addexp(int temp){experience_points_new+=temp;}
 void Role::setLevel() 
 {
-	int expmax=0;
-	for (int i = 0;i < 24;i++)
+	while(experience_points_new>=experience_points[level-1])
 	{
-		expmax+=experience_points[i];
-		if(experience_points_new<expmax)break;
-	}
-	level=i+1;
-	
-		
+		experience_points_new-=experience_points[level-1];
+		level++;
+	}	
 }
