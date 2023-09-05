@@ -5,9 +5,19 @@
 
 using namespace std;
 
-void SetColorAndBackground(int ForgC, int BackC) {
+void SetColorAndBackground(int ForgC//字符颜色, int BackC//背景颜色) //设置字体颜色
+{
 	WORD wColor = ((BackC & 0x0F) << 4) + (ForgC & 0x0F);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), wColor);
+}
+bool isInputValid() //检测数据类型是否输入错误
+{
+    if (std::cin.fail()) { // 检查输入是否失败
+        std::cin.clear(); // 清除错误状态标记
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // 忽略缓冲区中的无效字符
+        return false; // 输入无效
+    }
+    return true; // 输入有效
 }
 
 int welcome()
