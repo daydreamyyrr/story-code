@@ -34,3 +34,16 @@ int Role::getNeedMp(int whichSkill) { return p->getNeedMp(whichSkill); }//技能
 double Role::getAddAtk(int whichSkill) { return p->getAddAtk(whichSkill); }//技能攻击力加成
 int Role::getRecHp(int whichSkill) { return p->getRecHp(whichSkill); }//技能回复生命
 int Role::getBuff(int whichSkill) { return p->getBuff(whichSkill); }//技能加成防御
+int Role::addexp(int temp){experience_points_new+=temp;}
+void Role::setLevel() 
+{
+	int expmax=0;
+	for (int i = 0;i < 24;i++)
+	{
+		expmax+=experience_points[i];
+		if(experience_points_new<expmax)break;
+	}
+	level=i+1;
+	
+		
+}
