@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-Map::Map() :npc(0) {
+Map::Map() {
 	position = 0;
 	dx = 3;
 	dy = 2;
@@ -17,9 +17,9 @@ Map::Map() :npc(0) {
 	pos[dx][dy] = '*';
 }
 
-Map::Map(int p) :npc(p) {
+Map::Map(int p) {
 	position = p;
-	
+
 	if (p == 0) {
 		dx = 3;
 		dy = 2;
@@ -98,12 +98,6 @@ void Map::ShowMap()
 	cout << "                      |    " << pos[3][2] << "     |" << endl;
 	cout << "                      |__________|" << endl;
 	cout << "您现在的位置为" << mapName[position] << endl;
-}
-
-
-void Map::showRoom() {
-	if (isThereChat())
-		cout << "这里有：" << '\t' << npc.getName() << '\t';
 }
 
 void Map::Move(char order)
@@ -190,8 +184,6 @@ void Map::Move(char order)
 	}
 
 	pos[dx][dy] = '*';
-	npc( Npc(position));		//更新npc
-	showRoom();
 }
 
 bool Map::isThereChat()
@@ -203,7 +195,7 @@ bool Map::isThereChat()
 
 bool Map::isThereFight()
 {
-	if (position <= 8&&position>0)
+	if (position <= 8 && position > 0)
 		return true;
 	else return false;
 }
@@ -211,27 +203,6 @@ bool Map::isThereFight()
 int Map::getPosition()
 {
 	return position;
-}
-
-string Map::getNpcName() {
-	return npc.getName();
-}
-
-void Map::setNpc(Npc newNpc) 
-{
-	npc = newNpc;
-}
-
-Role Map::chatToNpc(Role player) {
-	return npc.chat(player);
-}
-
-int Map::getNpcGoodsId() {
-	return npc.getGoodsId();
-}
-
-int Map::getNpcGoodsNum() {
-	return npc.getGoodsNum();
 }
 
 string Map::getName()
