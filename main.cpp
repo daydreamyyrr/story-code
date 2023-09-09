@@ -1,28 +1,16 @@
-
-#include<iostream>
 #include <bits.h>
-#include<Windows.h>
-
+#include"map.h"
 using namespace std;
 
-void SetColorAndBackground(int ForgC//字符颜色, int BackC//背景颜色) //设置字体颜色
-{
+
+void SetColorAndBackground(int ForgC, int BackC) {
 	WORD wColor = ((BackC & 0x0F) << 4) + (ForgC & 0x0F);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), wColor);
-}
-bool isInputValid() //检测数据类型是否输入错误
-{
-    if (std::cin.fail()) { // 检查输入是否失败
-        std::cin.clear(); // 清除错误状态标记
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // 忽略缓冲区中的无效字符
-        return false; // 输入无效
-    }
-    return true; // 输入有效
 }
 
 int welcome()
 {
-	SetColorAndBackground(5,0);
+	/*SetColorAndBackground(5, 0);
 	for (int i = 0; i < 8; i++)
 		cout << endl;
 	cout << '\t' << '\t' << '\t' << '\t' << "    00        00              0      00        " << endl;
@@ -40,7 +28,7 @@ int welcome()
 	cout << '\t' << '\t' << '\t' << '\t' << '\t' << "     ********************   " << endl;
 	cout << '\t' << '\t' << '\t' << '\t' << '\t' << "         游戏制作信息       " << endl;
 	cout << '\t' << '\t' << '\t' << '\t' << '\t' << "     ********************   " << endl;
-	cout << '\t' << '\t' << '\t' << '\t' << "     制作人：中国海洋大学2023程序设计实践3组   "<< endl;
+	cout << '\t' << '\t' << '\t' << '\t' << "     制作人：中国海洋大学2023程序设计实践3组   " << endl;
 	cout << '\t' << '\t' << '\t' << '\t' << "    组长：谢耀坚，组员：杨子凡，杨济临，于铭洋 " << endl << endl;
 	cout << '\t' << '\t' << '\t' << '\t';
 	string GameMenu = " 1.开始游戏 2.继续游戏 3.退出游戏";
@@ -50,24 +38,36 @@ int welcome()
 		Sleep(20);
 		cout << GameMenu[i];
 	}
-	cout << endl;
-	
-	return 0;
+	cout << endl;*/
+	int k=0;
+	bool flag =false;
+	while (!flag)
+	{
+		cin >> k;
+		flag = isInputValid();
+		if (flag)//输入没问题再继续判断
+		{
+			if (k <= 3 && k >= 1)return k;
+			cout<< "输入错误，请重新输入" << endl;
+			flag = false;
+		}
+		else	cout << "输入错误，请重新输入" << endl;
+	}
 }
 
 void BackgroundText()
 {
-	
+
 	system("cls");
 	SetColorAndBackground(10, 0);
-	cout << endl<<"故事背景" << endl << endl;
+	cout << endl << "故事背景" << endl << endl;
 	SetColorAndBackground(14, 0);
 	string background = "    故事纯属虚构。";
 	for (int i = 0; i < background.length(); i++) {
 		Sleep(10);
 		cout << background[i];
 	}
-	cout << endl<<endl;
+	cout << endl << endl;
 	system("pause");
 	system("cls");
 	cout << endl;
@@ -79,7 +79,7 @@ void BackgroundText()
 		Sleep(10);
 		cout << background[i];
 	}
-	cout << endl<<endl;
+	cout << endl << endl;
 	system("pause");
 	system("cls");
 	cout << endl;
@@ -91,7 +91,7 @@ void BackgroundText()
 		Sleep(10);
 		cout << background[i];
 	}
-	cout << endl<<endl;
+	cout << endl << endl;
 	system("pause");
 	system("cls");
 	cout << endl;
@@ -103,14 +103,117 @@ void BackgroundText()
 		Sleep(10);
 		cout << background[i];
 	}
-	cout << endl<<endl;
+	cout << endl << endl;
 	system("pause");
 	system("cls");
-	}
+}
 
 
 
 int main()
 {
-  return 0;
+	int number = welcome();
+	Map map;
+	system("cls");
+	//BackgroundText();
+	Role* role=nullptr;
+	Npc npc;
+	enemy en(1);
+	int* p =nullptr;//关注装备栏状况
+	char order;//移动键
+	if (number == 1)
+	{
+		cout << "请问您想成为什么职业?" << endl;
+		cout << "在20世纪中后期，出现了南茅北马的说法，" << endl;
+		cout << "南茅指的是南方道教的茅山派，是正一道的分支，一般是说南方大多普遍使用茅山道术镇鬼。" << endl;
+		cout << "“北马”是指“出马”。北马是指出马仙都有通灵驱邪之功。出马：北方称为搬杆子、顶香火头、领兵带队的。" << endl;
+		cout << "但最终都是一个目的，有一个弟子（也称弟马）带领一个仙家的堂口，为人看事查病。是继承上古萨满文化的传承。" << endl;
+		cout << "赶尸人，一个身穿道袍的法师通过以一种特殊巫术引领尸体行走为职业的人。" << endl;
+		cout << "职业有1.出马弟子 2.茅山道士 3.赶尸人" << endl;
+		int k = 0;
+		bool flag = false;
+		while (!flag)
+		{
+			cin >> k;
+			flag = isInputValid();
+			if (flag)//输入没问题再继续判断
+			{
+				flag = false;
+				if (k <= 3 && k >= 1)flag = true;
+				else cout << "输入错误，请重新输入" << endl;
+			}
+			else
+			{
+				cout << "输入错误，请重新输入" << endl;
+			}
+		}
+		role = new Role(k);
+	}
+	else if (number == 2)
+	{
+		cout << "还没写";
+	}
+	else exit(1);
+	role->Role_panel();
+	int temp = 1;
+	bool flag = false;
+	while (temp)
+	{
+		cout << "状态栏:1.过主线 2.战斗 3.状态 4.移动 5.打开商店  6.背包  7.技能升级 8.保存退出 " << endl;
+		cin >> temp;
+		flag = isInputValid();
+		char f;//判断战斗与否
+		if(flag)
+			switch (temp)
+			{
+			case 1:npc.NpcChat(map.getPosition(), *role);
+				break;
+			case 2:en.set(map.getPosition());
+				cout << "此处有怪物" << en.getname();
+				cout << "战斗吗?Y/N" << endl;
+				cin >> f;
+				if (f == 'Y' || f == 'y')Fight fight(*role, map.getPosition(),0);
+				else 
+				{ 
+					if (!(f == 'n' || f == 'N'))cout << "输入错误，返回状态栏"; 
+					continue; 
+				}
+				break;
+			case 3:role->Role_panel();
+				role->Lookbag(role->getequipment());//查看角色背包
+				break;
+			case 4: 
+				while (true)
+				{
+					map.ShowMap();
+					cout << "使用w a s d来移动 按1进入地图" << endl;
+					cin >> order;
+					if (order == '1') {
+						system("cls");
+						break;
+					}
+					else {
+						map.Move(order);
+					}
+
+				}
+				break;
+			case 5:
+				role->setmoney(-role->Lookstore(role->getmoney()));
+				break;
+			case 6:role->equip();
+				break;
+			case 7:role->skill(); break;
+			case 8:exit(1);//先暂时定退出
+				break;
+			}
+		else
+		{
+			cout << "输入错误，请重新输入" << endl;
+			temp = 1;
+		}
+	}
+	
+
+	return 0;
 }
