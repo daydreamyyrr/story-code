@@ -1,12 +1,4 @@
-#include<iostream>
-#ifndef MAP_H
-#define MAP_H
-
-#include <string>
-#include "Enemy.h"
-#include"Role.h"
-#include "Npc.h"
-
+#include "NPC.h"
 using namespace std;
 
 class Map
@@ -16,18 +8,11 @@ public:
 	Map(int pos); //由参数pos为所在位置
 	~Map();
 	void ShowMap();			//显示大地图
-	void showRoom();		//显示身处的地方的信息，（有什么人可以交谈或者战斗）
 	void Store();
 	void Move(char order);
 	bool isThereChat();
 	bool isThereFight();
 	int getPosition();
-
-	string getNpcName();		//得到当前npc名字
-	void setNpc(Npc newNpc);
-	Role chatToNpc(Role player);
-	int getNpcGoodsId();
-	int getNpcGoodsNum();
 	string getName();
 
 private:
@@ -38,7 +23,4 @@ private:
 	char pos[4][5];
 	int dx;
 	int dy;
-	Npc npc;
 };
-
-#endif
