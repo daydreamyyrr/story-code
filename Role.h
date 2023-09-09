@@ -20,6 +20,7 @@ public:
 	double getAddAtk(int whichSkill);//技能攻击力加成
 	int getRecHp(int whichSkill);//技能回复生命
 	int getBuff(int whichSkill);//技能加成防御
+        void setLevel();//计算人物等级
 protected:
 	string name;
 	int hit_points;//(生命值)
