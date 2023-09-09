@@ -10,7 +10,7 @@ void SetColorAndBackground(int ForgC, int BackC) {
 
 int welcome()
 {
-	/*SetColorAndBackground(5, 0);
+	SetColorAndBackground(5, 0);
 	for (int i = 0; i < 8; i++)
 		cout << endl;
 	cout << '\t' << '\t' << '\t' << '\t' << "    00        00              0      00        " << endl;
@@ -38,7 +38,7 @@ int welcome()
 		Sleep(20);
 		cout << GameMenu[i];
 	}
-	cout << endl;*/
+	cout << endl;
 	int k=0;
 	bool flag =false;
 	while (!flag)
