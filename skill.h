@@ -1,10 +1,4 @@
-#ifndef SKILL_H
-#define SKILL_H
-
-
 #include<iostream>
-#include"enemy.h"
-
 using namespace std;
 
 class Skill
@@ -14,15 +8,15 @@ public:
 	~Skill() {};
 	virtual int getLevel(int whichSkill) = 0;//得到技能等级
 	virtual bool addLevel(int whichSkill) = 0;//技能升级
-	virtual int getLevelMax(int whichSkill) = 0;//得到最高等级（设置为3级）
-	virtual string skillName(int whichSkill) = 0;//得到技能名称
-	virtual string skillText(int whichSkill) = 0;//技能描述
+	virtual int getLevelMax(int whichSkill) = 0;//得到最高等级（设置为6级）
+	virtual void skillName(int whichSkill) = 0;//得到技能名称
+	virtual void skillText(int whichSkill) = 0;//技能描述
 	virtual int getNeedMp(int whichSkill) = 0;//技能法力值消耗
 	virtual double getAddAtk(int whichSkill) = 0;//技能攻击力加成
 	virtual int getRecHp(int whichSkill) = 0;//技能回复生命
 	virtual int getBuff(int whichSkill) = 0;//技能加成防御
 protected:
-	
+
 
 	int skillLevel_1;			//在基类构造函数里初始化
 	int skillLevel_2;
@@ -34,7 +28,7 @@ protected:
 	int skillLevel_Max_3;
 	int skillLevel_Max_4;
 
-	
+
 
 };
 class Role_1Skill :public Skill
@@ -78,4 +72,3 @@ public:
 	int getRecHp(int whichSkill);//技能回复生命
 	int getBuff(int whichSkill);//技能加成防御
 };
-#endif
