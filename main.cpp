@@ -115,7 +115,7 @@ int main()
 	int number = welcome();
 	Map map;
 	system("cls");
-	//BackgroundText();
+	BackgroundText();
 	Role* role=nullptr;
 	Npc npc;
 	enemy en(1);
