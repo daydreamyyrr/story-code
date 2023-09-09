@@ -1,7 +1,8 @@
 #include"NPC.h"
 
-void Npc::NpcChat(int position, int StoryFlag)
+void Npc::NpcChat(int position, Role& role)
 {
+	int StoryFlag = role.getstoryflag();
 	if (position == 0 && StoryFlag == 0)//清风镇
 	{
 		cout << "你：好久不见，雪昭姑娘，不知最近可有怪事发生?" << endl;
@@ -14,12 +15,15 @@ void Npc::NpcChat(int position, int StoryFlag)
 		system("pause");
 		cout << "你的直觉告诉你关键的问题就在这里，然后再找找问题的关键就行-乌鸦的翅膀啪的一下打到了你的头上，还不快去！走进王府，收起身上的铁丝，你心中一凛，有鬼气！若有若无的危机感萦绕在你的心头，一道剑气袭来" << endl;
 		system("pause");
+		Fight fight(role, 19,1);
+		role.setStoryflag();
 		//进入战斗，此部分交给fight，
 		// 王大爷清醒过后很感谢你，为报答你给予你50铜钱和人参果。  获得50铜钱，人参果*2
 		// 前往三凤山
 		//战斗结束后，StoryFlag++，当前flag为1
+
 	}
-	if (position == 1 && StoryFlag == 1)//三凤山
+	else if (position == 1 && StoryFlag == 1)//三凤山
 	{
 		cout << "你：老人家，请问附近可有歇脚的地方？" << endl;
 		system("pause");
@@ -47,12 +51,14 @@ void Npc::NpcChat(int position, int StoryFlag)
 		system("pause");
 		cout << "伴随着一声枪响，昨晚的老者提着一把猎枪赶来击中老虎头部，你顺势开始追赶伥鬼" << endl;
 		system("pause");
+		Fight fight1(role, 18, 1);
+		role.setStoryflag();
 		//进入战斗，此部分交给fight，
 		// 老者将死去的老虎皮送给你，你售卖后获得70铜钱。  获得70铜钱
 		// 前往云中池
 		//战斗结束后，StoryFlag++，当前flag为2
 	}
-	if (position == 2 && StoryFlag == 2)//云中池
+	else if (position == 2 && StoryFlag == 2)//云中池
 	{
 		cout << "王韩羽：这里真的是桃花流水鳜鱼肥啊，居住在此处真的是一大幸事，小兄弟来到此处可有何事？" << endl;
 		system("pause");
@@ -68,12 +74,14 @@ void Npc::NpcChat(int position, int StoryFlag)
 		system("pause");
 		cout << "......你来到池边，确实池中传来阵阵恶臭，胃里不免翻江倒海。池水依然一滩寂静，你察觉到水下必有异常，你潜伏在在旁边的草丛一直待到夜晚降临，王韩羽觉得害怕离开了此处。突然，水草像是被什么挥开一样，一个黑色的身影从水里缓缓走出，如你猜想的一样。你大喝一声跳出来准备大干一场" << endl;
 		system("pause");
+		Fight fight2(role, 10, 1);
+		role.setStoryflag();
 		//进入战斗，此部分交给fight，
 		// 狰狞的水鬼化作一滩黑水，王韩羽认出那个水鬼是他的一位好朋友，为答谢你，赠予你一件他家留存下来的一件白色道袍还有少许糯米。 获得白色道袍*1，糯米*1，30铜钱
 		// 前往陷土沼泽
 		//战斗结束后，StoryFlag++，当前flag为3
 	}
-	if (position == 3 && StoryFlag == 3)//陷土沼泽
+	else if (position == 3 && StoryFlag == 3)//陷土沼泽
 	{
 		cout << "你来到一片废土，这里荒无人烟，面前的大路也被滑落的巨石挡住，只剩下一片沼泽可以勉强通过。你只好沿着沼泽继续往前走，走了很久很久，天色逐渐都黑了下了，还没有走出沼泽地，可你愈发感觉脚越发沉重，感觉身体在下沉，像是有什么拖拽你一样。一只布满蛆虫的黑手抓住了的脚，你大感不妙，想挣扎却使不上劲，（奇遇二）。" << endl;
 		system("pause");
@@ -85,18 +93,21 @@ void Npc::NpcChat(int position, int StoryFlag)
 		system("pause");
 		cout << "三具布满窟窿丑陋至极的尸体腾地站起朝你扑来" << endl;
 		system("pause");
-		
+		Fight fight3(role, 11, 1);
+		role.setStoryflag();
 		//进入战斗，此部分交给fight，
 		// 巫婆的蛊虫死亡受到反噬倒地不起，你从她的各种练蛊物品中发现了至宝。  获得五毒粉*1，50铜钱
 		// 前往阴邪
 		//战斗结束后，StoryFlag++，当前flag为4
 	}
-	if (position == 4 && StoryFlag == 4)//阴邪
+	else if (position == 4 && StoryFlag == 4)//阴邪
 	{
 		cout << "跨过陷土沼泽的你来到了一片死寂之地，这里阴气环绕，你猜测这里百鬼横行，有大凶之兆，本想离开此处，却隐约听见有声音在呼唤你深入探索，你顺着声音逐渐深入" << endl;
 		system("pause");
 		cout << "这里枯草丛生，高大的树木遮天蔽日，乌鸦的啼叫惹得你心神不宁，一群长相凶恶，高大强壮的怪物出现在你的眼前，手上挥舞着插满钉子的大锤朝你狠狠袭来" << endl;
 		system("pause");
+		Fight fight4(role, 12, 1);
+		role.setStoryflag();
 		cout << "这些怪物十分凶恶，不过你还是处理好了" << endl;
 		system("pause");
 		cout << "看着倒下的几具庞大的尸体不禁感到后怕，更不敢想象最里面会有什么更可怕的东西在等着你" << endl;
@@ -107,16 +118,18 @@ void Npc::NpcChat(int position, int StoryFlag)
 		system("pause");
 		cout << "你：也得看你有多大本事了" << endl;
 		system("pause");
+		Fight fight5(role, 17, 1);
+		role.setStoryflag();
 		//进入战斗，此部分交给fight，
 		// 骷髅化作虚无消失了，却留下了最后一句话：这仅仅是开始而已。获得丹心丸*1，50铜钱
 		// 前往弘阳镇
 		//战斗结束后，StoryFlag++，当前flag为5
 	}
-	if (position == 5 && StoryFlag == 5)//弘阳镇
+	else if (position == 5 && StoryFlag == 5)//弘阳镇
 	{
 		cout << "走在去弘阳镇的路上，刚才经过清风镇又遇见了郑雪昭，真是一个有趣的人" << endl;
 		system("pause");
-		cout << "（回忆）：" << endl <<"郑雪昭：你终于回来啦，可经历了啥有趣的事快讲讲" << endl;
+		cout << "（回忆）：" << endl << "郑雪昭：你终于回来啦，可经历了啥有趣的事快讲讲" << endl;
 		system("pause");
 		cout << "（回忆）：" << endl << "你：这一路我......" << endl;
 		system("pause");
@@ -146,17 +159,19 @@ void Npc::NpcChat(int position, int StoryFlag)
 		system("pause");
 		cout << "你：呵，没死透呢，再来吧" << endl;
 		system("pause");
+		Fight fight6(role, 13, 1);
+		role.setStoryflag();
 		//进入战斗，此部分交给fight，
 		// 弘阳镇的百姓都很感谢你治好了他们的疾病，你只告诉他们是因为气候问题导致的让他们安心，他们为了答谢你赠予你许多有价值的东西。获得人参果*2，糯米*2，50铜钱
 		// 前往奇龙镇
 		//战斗结束后，StoryFlag++，当前flag为6
 	}
-	if (position == 6 && StoryFlag == 6)//奇龙镇
+	else if (position == 6 && StoryFlag == 6)//奇龙镇
 	{
 		cout << "顺着大路你来到了一个名叫奇龙镇的地方，明明有很多住户的地方却死气沉沉，偶尔能看见几个行人，想开口去问却也大步离开，神色慌张似乎发生了啥事。你偷偷跑到一户人家的窗前朝里观望，发现一个年轻小伙躺在床上面带笑容，时不时发出正常却又显得可怖的笑声" << endl;
 		system("pause");
 		cout << "你一个翻身潜进了家里想查看到底是什么情况，这时一个老奶奶出现在你的身后"
-			 <<endl<<"老奶奶：他呀是我的孩子，不知道最近到底是造了什么孽呀，好多人就这么一睡不醒，可是有都带着笑容，我的孩子也成了这副模样，造孽呀" << endl;
+			<< endl << "老奶奶：他呀是我的孩子，不知道最近到底是造了什么孽呀，好多人就这么一睡不醒，可是有都带着笑容，我的孩子也成了这副模样，造孽呀" << endl;
 		system("pause");
 		cout << "你：您也别太担心，我看他身体还没多大损伤，估计这症状开始还没多久。您说很多人都有这症状？" << endl;
 		system("pause");
@@ -171,40 +186,43 @@ void Npc::NpcChat(int position, int StoryFlag)
 		cout << "你恍惚中来到了一片森林之中，大雾弥漫，能见度不足五米，你摸索着想要走出这里，却好像始终在原地绕圈。你开始施法求仙指路，却没得到任何回应。身体也突然不受控制，仿佛沉入深水之中，呼吸不畅。你咬破舌尖，口吐咒语，然后你猛地惊醒，翻身下床，衣服早已被汗水浸湿。" << endl;
 		system("pause");
 		cout << "床另一边的黑影传来声音"
-			 <<endl<<"山魈：你竟然能逃脱梦境，还是低估了你的实力" << endl;
+			<< endl << "山魈：你竟然能逃脱梦境，还是低估了你的实力" << endl;
 		system("pause");
 		cout << "你：那看来不得不把你给收拾了" << endl;
 		system("pause");
+		Fight fight7(role, 14, 1);
+		role.setStoryflag();
 		//进入战斗，此部分交给fight，
 		// 山魈逐渐消亡：还没结束呢  获得100铜钱
 		//镇上的人们都恢复了正常，对于那些人来说就像做了一个很长的美梦，你不断回想着你的那个梦，实在是太过真实，决定继续追查
 		//请前往迷雾森林
 		//战斗结束后，StoryFlag++，当前flag为7
 	}
-	if (position == 7 && StoryFlag == 7)//迷雾森林
+	else if (position == 7 && StoryFlag == 7)//迷雾森林
 	{
 		cout << "你绕着三凤山来到了迷雾森林，很多人提及到此处都是汗毛直立，许多人进去后再也没出来过，有些人侥幸逃出来只是大叫着有怪物 ，因此无人再敢涉足。" << endl;
 		system("pause");
 		cout << "乌鸦先生在这里等候你许久了" << endl
-			 << "乌鸦先生：我预料到你会来到这里，不过之后的事情我预见不了了，估计此行凶多吉少呀，你要做好准备。";
+			<< "乌鸦先生：我预料到你会来到这里，不过之后的事情我预见不了了，估计此行凶多吉少呀，你要做好准备。";
 		system("pause");
 		cout << "这里的场景跟你梦中的模样极为相似，你也开始感到了害怕。当恐惧被无限放大的时候，等待你的将是更深的黑暗" << endl;
 		system("pause");
 		cout << "三只各不相同鬼怪在迷雾中穿梭，你严正以待，它们庞大的身影飘浮到你眼前，正是魑、魅、魍魉。之前山魈给你留下的梦魇不断侵蚀着你的魂魄，恐惧想要占据你的身体" << endl;
 		system("pause");
-		
+		Fight fight8(role, 15, 1);
+		role.setStoryflag();
 		//进入战斗，此部分交给fight，
 		// ......战斗结束 获得200铜钱，人参果*1魑魅魍魉变成一团黑气逃走了，你奋力追赶，心想势必要彻底消灭他们
 		// 请前往云龙峰
 		//战斗结束后，StoryFlag++，当前flag为8
 	}
-	if (position == 8 && StoryFlag == 8)//云龙峰
+	else if (position == 8 && StoryFlag == 8)//云龙峰
 	{
 		cout << "这里更是陡峭崎岖，峰顶上魔气包裹，你紧念咒语定住心神，朝着峰顶艰难走去。婴儿的啼哭从峰顶传来，你心里一阵疑惑，此处怎会有婴儿啼哭声呢。随之而来是一个羊身人面其目在腋下，虎齿人爪的庞大怪物" << endl;
-		system("pause"); 
+		system("pause");
 		cout << endl << endl;
 		system("color F4");
-		cout <<'\t'<<'\t' << "饕餮!" << endl;
+		cout << '\t' << '\t' << "饕餮!" << endl;
 		cout << endl << endl;
 		system("color 0F");
 		system("pause");
@@ -216,37 +234,39 @@ void Npc::NpcChat(int position, int StoryFlag)
 		system("pause");
 		cout << "你：既然如此，我就更要消灭你了，就算拼了命也要把你彻底铲除" << endl;
 		system("pause");
+		Fight fight9(role, 16, 1);
+		role.setStoryflag();
 		//进入战斗，此部分交给fight，
 		// 受到重创的饕餮：可惜啊还是没能吃掉你，我不甘心啊
 		/*你：贪念终究会败在自己身上，你这也算是自食其果
 			饕餮已亡，魔气散去，世间又恢复到光明的样子*/
-		
-		//剧情结束
+
+			//剧情结束
 	}
 	else
 	{
-		cout << "你在别处还有任务未完成" << endl;
-		StoryPs(position, StoryFlag);
+		cout << "你在此的任务已完成或在别处还有任务未完成" << endl;
+		StoryPs(StoryFlag);
 	}
 }
-void Npc::StoryPs(int position, int StoryFlag)
+void Npc::StoryPs( int StoryFlag)
 {
-	if (position == 0 && StoryFlag == 0)
+	if (StoryFlag == 0)
 		cout << "当前任务为清风镇任务，请前往清风镇" << endl;
-	if (position == 1 && StoryFlag == 1)
+	else if (StoryFlag == 1)
 		cout << "当前任务为三凤山任务，请前往三凤山" << endl;
-	if (position == 2 && StoryFlag == 2)
+	else if (StoryFlag == 2)
 		cout << "当前任务为云中池任务，请前往云中池" << endl;
-	if (position == 3 && StoryFlag == 3)
+	else if ( StoryFlag == 3)
 		cout << "当前任务为陷土沼泽任务，请前往陷土沼泽" << endl;
-	if (position == 4 && StoryFlag == 4)
+	else if ( StoryFlag == 4)
 		cout << "当前任务为阴邪任务，请前往阴邪" << endl;
-	if (position == 5 && StoryFlag == 5)
+	else if (StoryFlag == 5)
 		cout << "当前任务为弘阳镇任务，请前往弘阳镇" << endl;
-	if (position == 6 && StoryFlag == 6)
+	else if ( StoryFlag == 6)
 		cout << "当前任务为奇龙镇任务，请前往奇龙镇" << endl;
-	if (position == 7 && StoryFlag == 7)
+	else if (StoryFlag == 7)
 		cout << "当前任务为迷雾森林任务，请前往迷雾森林" << endl;
-	if (position == 8 && StoryFlag == 8)
+	else if (StoryFlag == 8)
 		cout << "当前任务为云龙峰任务，请前往云龙峰" << endl;
 }
