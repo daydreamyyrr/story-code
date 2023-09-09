@@ -73,15 +73,11 @@ Good::Good(int i): id(i)
 		introduce = "五毒粉：由五种剧毒混合制成，极具攻击性(对怪物造成60点伤害，减少10点防御)";
 		HpRegen = 0, MpRegen = 0, Defense = 0, Defense_reduce = 10, harm = 60, Power_up = 0;
 		break;
-	case 18:	name = "一级灵丹";
-		introduce = "一级灵丹，可提升道行（全属性 + 10，限购一枚）";
-		HpRegen = 10, MpRegen = 10, Defense = 10, Defense_reduce = 10, harm = 10, Power_up = 10;
-		break;
-	case 19:	name = "人参果";
+	case 18:	name = "人参果";
 		introduce = "人参果：由百年人参熬制而成，可以恢复生命（生命回复40）";
 		HpRegen = 40, MpRegen = 0, Defense = 0, Defense_reduce = 0, harm = 0, Power_up = 0;
 		break;
-	case 20:	name = "丹心丸";
+	case 19:	name = "丹心丸";
 		introduce = "丹心丸：采集各种中草药磨碎炼化而成，可以恢复法力（法力回复30）";
 		HpRegen = 0, MpRegen = 30, Defense = 0, Defense_reduce = 0, harm = 0, Power_up = 0;
 		break;
